@@ -1,6 +1,6 @@
-files
-node_modules
-tokens
+files/
+node_modules/
+tokens/
 .env
 professores-prefeitura-de-calumbi.xlsx
 professores-prefeitura-de-cupira.xlsx
