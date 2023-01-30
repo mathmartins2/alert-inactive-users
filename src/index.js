@@ -1,7 +1,7 @@
 import { startBot, sendExcelFile } from './bot/index.js';
 import { getDataFromDb } from './db/index.js';
 import { saveDataToExcel } from './excel/index.js';
-import { pedrasDeFogo, cupira, calumbi, calumbi2, ferreiros, beloJardim } from './config'
+import { pedrasDeFogo, cupira, calumbi, calumbi2, ferreiros, beloJardim } from './config/index.js'
 
 async function run(client_id) {
   const data = await getDataFromDb(client_id);
