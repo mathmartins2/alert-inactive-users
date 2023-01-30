@@ -30,7 +30,7 @@ const clients = [
   {
     id: 35,
     name: 'Prefeitura de Calumbi',
-    numbers: [calumbi]
+    numbers: [calumbi, calumbi2]
   },
   {
     id: 37,
