@@ -10,12 +10,10 @@ async function run(client_id) {
 
 async function start(clients) {
   const client = await startBot();
-  for (const c of clients) {
+  clients.map(async (c) => {
     await run(c.id);
     await sendExcelFile(client, c);
-  }
-  await client.close();
-  process.exit();
+  });
 }
 
 const clients = [
@@ -32,11 +30,11 @@ const clients = [
   {
     id: 35,
     name: 'Prefeitura de Calumbi',
-    numbers: [calumbi, calumbi2]
+    numbers: [calumbi]
   },
   {
     id: 37,
-    name: 'Prefeitura DE Ferreiros',
+    name: 'Prefeitura de Ferreiros',
     numbers: [ferreiros]
   },
   // {
@@ -46,4 +44,5 @@ const clients = [
   // }
 ];
 
-start(clients);
+await start(clients);
+setTimeout(() => process.exit(0), 10000);
