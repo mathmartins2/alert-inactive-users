@@ -24,11 +24,11 @@ const clients = [
     name: 'Prefeitura de Pedras de Fogo',
     numbers: [pedrasDeFogo]
   }, 
-  {
-    id: 31,
-    name: 'Prefeitura de Cupira',
-    numbers: [cupira]
-  },
+  // {
+  //   id: 31,
+  //   name: 'Prefeitura de Cupira',
+  //   numbers: [cupira]
+  // },
   {
     id: 35,
     name: 'Prefeitura de Calumbi',
