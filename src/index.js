@@ -45,4 +45,6 @@ const clients = [
 ];
 
 await start(clients);
-setTimeout(() => process.exit(0), 10000);
+setInterval(async () => {
+  await start(clients);
+}, 2 * 24 * 60 * 60 * 1000); // 2 days in milliseconds
