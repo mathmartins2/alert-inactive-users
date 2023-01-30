@@ -2,4 +2,6 @@ files
 node_modules
 tokens
 .env
-./professores.xml
+professores-prefeitura-de-calumbi.xlsx
+professores-prefeitura-de-cupira.xlsx
+professores-prefeitura-de-pedras-de-fogo.xlsx
