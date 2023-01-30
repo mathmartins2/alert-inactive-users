@@ -13,3 +13,4 @@ export const calumbi = process.env.CALUMBI;
 export const calumbi2 = process.env.CALUMBI2;
 export const ferreiros = process.env.FERREIROS;
 export const beloJardim = process.env.BELO_JARDIM;
+export const supportNumber = process.env.SUPPORT_NUMBER;

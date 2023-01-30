@@ -1,4 +1,5 @@
 import { create } from 'venom-bot';
+import { supportNumber } from '../config/index.js';
 
 export async function startBot() {
   console.log('Starting Venom Bot...');
@@ -25,7 +26,17 @@ export async function sendExcelFile(client, clientData) {
     
     numbers.forEach(async (n) => {
       console.log(`Sending file to ${n}...`);
-      await client.sendFile(n, file.path, file.name, file.desc);
+      Promise.all(
+        [
+          client.sendFile(n, file.path, file.name, file.desc), 
+          client.sendText(n, 'Não Responda essa mensagem! Qualquer dúvida, entre em contato com o suporte'), 
+          client.sendContactVcard(n, supportNumber, 'Suporte Gerencial')
+        ]
+        ).then(() => {
+        console.log(`File sent to ${n}`);
+      }).catch((error) => {
+        console.log(error);
+      })
     })
     console.log('Excel file sent successfully');
   } catch (error) {
