@@ -1,15 +1,15 @@
 import { startBot, sendExcelFile } from './bot/index.js';
 import { getDataFromDb } from './db/index.js';
 import { saveDataToExcel } from './excel/index.js';
-import { pedrasDeFogo, cupira, calumbi, calumbi2, ferreiros, beloJardim } from './config/index.js'
+import { pedrasDeFogo, calumbi, calumbi2, beloJardim } from './config/index.js'
 
-async function run(client_id) {
-  const data = await getDataFromDb(client_id);
+async function run(clientId) {
+  const data = await getDataFromDb(clientId);
   await saveDataToExcel(data);
 }
 
+const client = await startBot();
 async function start(clients) {
-  const client = await startBot();
   clients.map(async (c) => {
     await run(c.id);
     await sendExcelFile(client, c);
@@ -32,14 +32,14 @@ const clients = [
     name: 'Prefeitura de Calumbi',
     numbers: [calumbi, calumbi2]
   },
-  {
-    id: 37,
-    name: 'Prefeitura de Ferreiros',
-    numbers: [ferreiros]
-  },
+  // {
+  //   id: 37,
+  //   name: 'Prefeitura de Ferreiros',
+  //   numbers: [ferreiros]
+  // },
   // {
   //   id: 39,
-  //   name: 'Prefeitura DE Belo Jardim',
+  //   name: 'Prefeitura De Belo Jardim',
   //   number: beloJardim
   // }
 ];
