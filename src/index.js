@@ -1,7 +1,8 @@
 import { startBot, sendExcelFile } from './bot/index.js';
 import { getDataFromDb } from './db/index.js';
 import { saveDataToExcel } from './excel/index.js';
-import { pedrasDeFogo, calumbi, calumbi2, beloJardim, supportNumber } from './config/index.js'
+import { pedrasDeFogo, calumbi, calumbi2, beloJardim, supportNumber } from './config/index.js';
+import cron from 'node-cron';
 
 async function run(clientId) {
   const data = await getDataFromDb(clientId);
@@ -45,6 +46,6 @@ const clients = [
 ];
 
 await start(clients);
-setInterval(async () => {
+cron.schedule('0 14 */2 * *', async () => {
   await start(clients);
-}, 2 * 24 * 60 * 60 * 1000); // 2 days in milliseconds
+});
