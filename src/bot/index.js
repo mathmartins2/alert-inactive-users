@@ -20,22 +20,25 @@ export async function sendExcelFile(client, clientData) {
     
     const file = {
       name: `professores-${clientName}.xlsx`,
-      path: `./professores-${clientName}.xlsx`,
+      path: `professores-${clientName}.xlsx`,
       desc: 'Olá, segue o relatório de professores que não acessaram o sistema nos últimos 2 dias.',
     };
     
-    numbers.forEach(async (n) => {
-      console.log(`Sending file to ${n}...`);
-      Promise.all(
-        [
-          client.sendFile(n, file.path, file.name, file.desc), 
-          client.sendText(n, 'Não Responda essa mensagem! Qualquer dúvida, entre em contato com o suporte'), 
-          client.sendContactVcard(n, supportNumber, 'Suporte Gerencial')
-        ]
-        ).then(() => {
-        console.log(`File sent to ${n}`);
+    await numbers.forEach(async (n) => {
+      await client.sendFile(n, file.path, file.name, file.desc).then(() => {
+        console.log('sendFile1')
       }).catch((error) => {
-        console.log(error);
+        console.log(error)
+      })
+      await client.sendText(n, 'Não Responda essa mensagem! Qualquer dúvida, entre em contato com o suporte').then(() => {
+        console.log('sendFile')
+      }).catch((error) => {
+        console.log(error)
+      })
+      await client.sendContactVcard(n, supportNumber, 'Suporte Gerencial').then(() => {
+        console.log('sendFile2')
+      }).catch((error) => {
+        console.log(error)
       })
     })
     console.log('Excel file sent successfully');

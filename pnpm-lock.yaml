@@ -5,7 +5,7 @@ specifiers:
   dotenv: ^16.0.3
   node-cron: ^3.0.2
   pg: ^8.9.0
-  venom-bot: ^4.3.7
+  venom-bot: github:orkestral/venom
   whatsapp-web.js: ^1.19.3
   xlsx: ^0.18.5
 
@@ -14,7 +14,7 @@ dependencies:
   dotenv: 16.0.3
   node-cron: 3.0.2
   pg: 8.9.0
-  venom-bot: 4.3.7
+  venom-bot: github.com/orkestral/venom/6732366ebf906048da93c1976530d039800dbec3
   whatsapp-web.js: 1.19.3
   xlsx: 0.18.5
 
@@ -353,9 +353,9 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: false
 
-  /@wppconnect/wa-js/2.18.4:
-    resolution: {integrity: sha512-PU7zhMLvXcw4hbyN60TP4pNCOos4TCbhqHom/PxAgbEPgVU7DT3Ied81AgEpkMxbkO3UXIOgCdzpOlJuA7STxg==}
-    engines: {whatsapp-web: '>=2.2230.9-beta'}
+  /@wppconnect/wa-js/2.21.0:
+    resolution: {integrity: sha512-pJ0SAtKUGueF3ffccE1wtyVNqYU+zqer8fzcDYisK2bUCDZ+QCdzNDVKN3FX42UPDnHzBS3fcz9CWFaeAeoSVA==}
+    engines: {whatsapp-web: '>=2.2245.8-beta'}
     dev: false
 
   /acorn-walk/8.2.0:
@@ -421,6 +421,10 @@ packages:
   /ansi-regex/6.0.1:
     resolution: {integrity: sha512-n5M855fKb2SsfMIiFFoVrABHJC8QtHwVx+mHWP3QcEqBHYienj5dHSgjbxtC0WEZXYt4wcD6zrQElDPhFuZgfA==}
     engines: {node: '>=12'}
+    dev: false
+
+  /ansi-sequence-parser/1.1.0:
+    resolution: {integrity: sha512-lEm8mt52to2fT8GhciPCGeCXACSz2UwIN4X2e2LJSnZ5uAbn2/dsYdOmUXq0AtWS5cpAupysIneExOgH0Vd2TQ==}
     dev: false
 
   /ansi-styles/3.2.1:
@@ -873,8 +877,8 @@ packages:
     dev: false
     optional: true
 
-  /compressorjs/1.1.1:
-    resolution: {integrity: sha512-SysRuUPfmUNoq+RviE0iMFVUmoX2q/x+7PkEPUmk6NGkd85hDrmvujx0Qtp8UCGA6KMe5kuodsylPQcNaLf60w==}
+  /compressorjs/1.2.1:
+    resolution: {integrity: sha512-+geIjeRnPhQ+LLvvA7wxBQE5ddeLU7pJ3FsKFWirDw6veY3s9iLxAQEw7lXGHnhCJvBujEQWuNnGzZcvCvdkLQ==}
     dependencies:
       blueimp-canvas-to-blob: 3.29.0
       is-blob: 2.1.0
@@ -2002,6 +2006,14 @@ packages:
     dependencies:
       brace-expansion: 2.0.1
     dev: false
+    optional: true
+
+  /minimatch/7.4.2:
+    resolution: {integrity: sha512-xy4q7wou3vUoC9k1xGTXc+awNdGaGVHtFUaey8tiX4H1QRc04DZ/rmDFwNm2EBsuYEhAZ6SgMmYf3InGY6OauA==}
+    engines: {node: '>=10'}
+    dependencies:
+      brace-expansion: 2.0.1
+    dev: false
 
   /minimist/1.2.7:
     resolution: {integrity: sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==}
@@ -2465,7 +2477,7 @@ packages:
   /puppeteer/13.7.0:
     resolution: {integrity: sha512-U1uufzBjz3+PkpCxFrWzh4OrMIdIb2ztzCu0YEPfRHjHswcSwHZswnK+WdsOQJsRV8WeTg3jLhJR4D867+fjsA==}
     engines: {node: '>=10.18.1'}
-    deprecated: < 18.1.0 is no longer supported
+    deprecated: < 19.2.0 is no longer supported
     requiresBuild: true
     dependencies:
       cross-fetch: 3.1.5
@@ -2490,7 +2502,7 @@ packages:
   /puppeteer/14.4.1:
     resolution: {integrity: sha512-+H0Gm84aXUvSLdSiDROtLlOofftClgw2TdceMvvCU9UvMryappoeS3+eOLfKvoy4sm8B8MWnYmPhWxVFudAOFQ==}
     engines: {node: '>=14.1.0'}
-    deprecated: < 18.1.0 is no longer supported
+    deprecated: < 19.2.0 is no longer supported
     requiresBuild: true
     dependencies:
       cross-fetch: 3.1.5
@@ -2714,9 +2726,10 @@ packages:
       tunnel-agent: 0.6.0
     dev: false
 
-  /shiki/0.12.1:
-    resolution: {integrity: sha512-aieaV1m349rZINEBkjxh2QbBvFFQOlgqYTNtCal82hHj4dDZ76oMlQIX+C7ryerBTDiga3e5NfH6smjdJ02BbQ==}
+  /shiki/0.14.1:
+    resolution: {integrity: sha512-+Jz4nBkCBe0mEDqo1eKRcCdjRtrCjozmcbTUjbPTX7OOJfEbTZzlUWlZtGe3Gb5oV1/jnojhG//YZc3rs9zSEw==}
     dependencies:
+      ansi-sequence-parser: 1.1.0
       jsonc-parser: 3.2.0
       vscode-oniguruma: 1.7.0
       vscode-textmate: 8.0.0
@@ -2995,8 +3008,8 @@ packages:
     engines: {node: '>= 8'}
     dev: false
 
-  /typedoc/0.23.24:
-    resolution: {integrity: sha512-bfmy8lNQh+WrPYcJbtjQ6JEEsVl/ce1ZIXyXhyW+a1vFrjO39t6J8sL/d6FfAGrJTc7McCXgk9AanYBSNvLdIA==}
+  /typedoc/0.23.26:
+    resolution: {integrity: sha512-5m4KwR5tOLnk0OtMaRn9IdbeRM32uPemN9kur7YK9wFqx8U0CYrvO9aVq6ysdZSV1c824BTm+BuQl2Ze/k1HtA==}
     engines: {node: '>= 14.14'}
     hasBin: true
     peerDependencies:
@@ -3004,8 +3017,8 @@ packages:
     dependencies:
       lunr: 2.3.9
       marked: 4.2.12
-      minimatch: 5.1.6
-      shiki: 0.12.1
+      minimatch: 7.4.2
+      shiki: 0.14.1
     dev: false
 
   /typescript/4.9.4:
@@ -3080,58 +3093,6 @@ packages:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
     dev: false
     optional: true
-
-  /venom-bot/4.3.7:
-    resolution: {integrity: sha512-mWCp6rpABiO6D+IgHeGvwzO/+HqsVu7YZg5buQLQW5GnadzbLhIh56h3JloCumaubbiDQDo5+Eu/sDnqp1hMnQ==}
-    dependencies:
-      '@typescript-eslint/eslint-plugin': 5.49.0_wxm6hkjtuois6ojbvd4okzqyxe
-      '@typescript-eslint/parser': 5.49.0
-      '@wppconnect/wa-js': 2.18.4
-      atob: 2.1.2
-      axios: 1.2.6
-      boxen: 5.1.2
-      catch-exit: 1.2.2
-      chalk: 4.1.2
-      chrome-launcher: 0.15.1
-      commitizen: 4.3.0
-      compressorjs: 1.1.1
-      cz-conventional-changelog: 3.3.0
-      dotenv: 16.0.3
-      eventemitter2: 6.4.9
-      futoin-hkdf: 1.5.1
-      i: 0.3.7
-      latest-lib: 0.2.1
-      mime-types: 2.1.35
-      ora: 6.1.2
-      puppeteer: 14.4.1
-      puppeteer-extra: 3.3.4_puppeteer@14.4.1
-      puppeteer-extra-plugin-stealth: 2.11.1_puppeteer-extra@3.3.4
-      qrcode-terminal: 0.12.0
-      sanitize-filename: 1.6.3
-      sharp: 0.30.7
-      spinnies: 0.5.1
-      tree-kill: 1.2.2
-      typedoc: 0.23.24
-      typedoc-default-themes: 0.12.10
-      winston: 3.8.2
-      ws: 8.12.0
-      yoo-hoo: 1.3.1
-    optionalDependencies:
-      fsevents: 2.3.2
-    transitivePeerDependencies:
-      - '@swc/core'
-      - '@swc/wasm'
-      - '@types/puppeteer'
-      - bufferutil
-      - debug
-      - encoding
-      - eslint
-      - playwright-extra
-      - puppeteer-core
-      - supports-color
-      - typescript
-      - utf-8-validate
-    dev: false
 
   /vscode-oniguruma/1.7.0:
     resolution: {integrity: sha512-L9WMGRfrjOhgHSdOYgCt/yRMsXzLDJSL7BPrOZt73gU0iWO4mpqzqQzOz5srxqTvMBaR0XZTSrVWo4j55Rc6cA==}
@@ -3343,3 +3304,57 @@ packages:
       readable-stream: 3.6.0
     dev: false
     optional: true
+
+  github.com/orkestral/venom/6732366ebf906048da93c1976530d039800dbec3:
+    resolution: {tarball: https://codeload.github.com/orkestral/venom/tar.gz/6732366ebf906048da93c1976530d039800dbec3}
+    name: venom-bot
+    version: 4.3.7
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 5.49.0_wxm6hkjtuois6ojbvd4okzqyxe
+      '@typescript-eslint/parser': 5.49.0
+      '@wppconnect/wa-js': 2.21.0
+      atob: 2.1.2
+      axios: 1.2.6
+      boxen: 5.1.2
+      catch-exit: 1.2.2
+      chalk: 4.1.2
+      chrome-launcher: 0.15.1
+      commitizen: 4.3.0
+      compressorjs: 1.2.1
+      cz-conventional-changelog: 3.3.0
+      dotenv: 16.0.3
+      eventemitter2: 6.4.9
+      futoin-hkdf: 1.5.1
+      i: 0.3.7
+      latest-lib: 0.2.1
+      mime-types: 2.1.35
+      ora: 6.1.2
+      puppeteer: 14.4.1
+      puppeteer-extra: 3.3.4_puppeteer@14.4.1
+      puppeteer-extra-plugin-stealth: 2.11.1_puppeteer-extra@3.3.4
+      qrcode-terminal: 0.12.0
+      sanitize-filename: 1.6.3
+      sharp: 0.30.7
+      spinnies: 0.5.1
+      tree-kill: 1.2.2
+      typedoc: 0.23.26
+      typedoc-default-themes: 0.12.10
+      winston: 3.8.2
+      ws: 8.12.0
+      yoo-hoo: 1.3.1
+    optionalDependencies:
+      fsevents: 2.3.2
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@swc/wasm'
+      - '@types/puppeteer'
+      - bufferutil
+      - debug
+      - encoding
+      - eslint
+      - playwright-extra
+      - puppeteer-core
+      - supports-color
+      - typescript
+      - utf-8-validate
+    dev: false
